@@ -1,4 +1,4 @@
-<div class="">
+<div class="" *ngIf="!loading else loadingTpl ">
   <!--Header-->
   <div class="pt-8">
     <div class="container m-auto flex justify-between">
@@ -56,48 +56,15 @@
         Meet our team
       </div>
       <div class="flex gap-8 justify-between mt-16">
-        <nz-card class="w-[300px] border-[#F6F6F6] bg-[#F6F6F6]">
+        <nz-card class="w-[300px] border-[#F6F6F6] bg-[#F6F6F6]" *ngFor="let user of users">
           <div>
-            <img nz-image [nzSrc]="'assets/images/intro/cat.jpg'">
+            <img nz-image [nzSrc]="user.image">
           </div>
           <div class="font-roboto font-medium text-2xl">
-            Pua Zhi Xian
+            {{user.name}}
           </div>
           <div class="font-robot text-[22px]">
-            FullStack Developer
-          </div>
-        </nz-card>
-        <nz-card class="w-[300px] border-[#F6F6F6] bg-[#F6F6F6]">
-          <div>
-            <img nz-image [nzSrc]="'assets/images/intro/cat.jpg'">
-          </div>
-          <div class="font-roboto font-medium text-2xl">
-            Pua Zhi Xian
-          </div>
-          <div class="font-robot text-[22px]">
-            FullStack Developer
-          </div>
-        </nz-card>
-        <nz-card class="w-[300px] border-[#F6F6F6] bg-[#F6F6F6]">
-          <div>
-            <img nz-image [nzSrc]="'assets/images/intro/cat.jpg'">
-          </div>
-          <div class="font-roboto font-medium text-2xl">
-            Pua Zhi Xian
-          </div>
-          <div class="font-robot text-[22px]">
-            FullStack Developer
-          </div>
-        </nz-card>
-        <nz-card class="w-[300px] border-[#F6F6F6] bg-[#F6F6F6]">
-          <div>
-            <img nz-image [nzSrc]="'assets/images/intro/cat.jpg'">
-          </div>
-          <div class="font-roboto font-medium text-2xl">
-            Pua Zhi Xian
-          </div>
-          <div class="font-robot text-[22px]">
-            FullStack Developer
+            {{user.position}}
           </div>
         </nz-card>
       </div>
@@ -126,3 +93,8 @@
 
 
 </div>
+
+
+<ng-template #loadingTpl>
+  <nz-skeleton [nzActive]="true"></nz-skeleton>
+</ng-template>
