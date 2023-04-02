@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif'],
+        'red-hat-display':['Red Hat Display','sans-serif']
+      },
       colors: {
         'danger': '#F0951C',
         'warning': '#F55D53',
