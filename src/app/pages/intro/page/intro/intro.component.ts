@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserRestService} from "../../../../restService/user/user.rest.service";
 import {IUser} from "../../../../interface/user/i-user";
 import {finalize} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-intro',
@@ -10,21 +11,26 @@ import {finalize} from "rxjs";
 })
 export class IntroComponent implements OnInit {
 
-  constructor(private userRestService: UserRestService) {
+  constructor(private userRestService: UserRestService,
+              private router: Router) {
   }
 
-  loading: boolean = true;
+  loadingUser: boolean = true;
   users!: IUser[];
 
 
   ngOnInit(): void {
     this.userRestService.getUser()
       .pipe(finalize(() => {
-        this.loading = false;
+        this.loadingUser = false;
       }))
       .subscribe((resp) => {
         this.users = resp;
         console.log(this.users);
       })
+  }
+
+  direct(path: string) {
+    this.router.navigate(['/', path]);
   }
 }

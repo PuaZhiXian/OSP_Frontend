@@ -1,16 +1,16 @@
-<div class="" *ngIf="!loading else loadingTpl ">
+<div class="" >
   <!--Header-->
   <div class="pt-8">
     <div class="container m-auto flex justify-between">
-      <div class="font-extrabold text-[40px] font-roboto">
+      <div class="font-extrabold text-[40px] font-roboto cursor-pointer" (click)="direct('intro')">
         Climate Change
       </div>
       <div class="gap-8 flex font-medium text-2xl font-reboto">
-        <button>Effects</button>
-        <button>Causes</button>
-        <button>Solution</button>
-        <button>Future</button>
-        <button>Events</button>
+        <button (click)="direct('effects')">Effects</button>
+        <button (click)="direct('causes')">Causes</button>
+        <button (click)="direct('solution')">Solution</button>
+        <button (click)="direct('future')">Future</button>
+        <button (click)="direct('events')">Events</button>
       </div>
     </div>
   </div>
@@ -55,7 +55,7 @@
       <div class="font-bold text-[55px] font-reboto text-center">
         Meet our team
       </div>
-      <div class="flex gap-8 justify-between mt-16">
+      <div class="flex gap-8 justify-between mt-16" *ngIf="!loadingUser else loadingTpl ">
         <nz-card class="w-[300px] border-[#F6F6F6] bg-[#F6F6F6]" *ngFor="let user of users">
           <div>
             <img nz-image [nzSrc]="user.image">
