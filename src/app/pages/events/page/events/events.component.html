@@ -1,1 +1,59 @@
-<p>events works!</p>
+<div class="">
+  <!--Header-->
+
+  <!--Content-->
+  <div class="mt-24 container m-auto px-12">
+    <div class="px 12">
+      <!--Main Title-->
+      <div class="font-bold text-7xl text-center font-red-hat-display">
+        What Is Climate Change?
+      </div>
+
+      <!--Event List-->
+      <div class="eventList">
+        <nz-avatar-group class="eventImages" *ngFor="let image of eventImages">
+          <div class="eventImage">
+            <nz-avatar [nzShape]="'circle'" [nzSize]="64" [nzSrc]="image"></nz-avatar>
+          </div>
+        </nz-avatar-group>
+        <div class="font-roboto font-medium text-2xl" *ngFor="let name of eventNames">
+          {{name}}
+        </div>
+      </div>
+
+      <!--Spotlight-->
+      <div class="spotlight">
+        <div class="font-bold text-7xl text-center font-red-hat-display">
+          In The Spotlight
+        </div>
+        <div class="slLayout">
+          <div class="slBoxLeft">
+            <div class="slBox">
+              <div class="slImage"></div>
+              <div class="slText"></div>
+            </div>
+          </div>
+          <div class="slBoxRight">
+            <div class="slBoxSmall">
+              <div class="slBox">
+                <div class="slImage"></div>
+                <div class="slText"></div>
+              </div>
+            </div>
+            <div class="slBoxSmall">
+              <div class="slBox">
+                <div class="slImage"></div>
+                <div class="slText"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--Footer-->
+
+</div>

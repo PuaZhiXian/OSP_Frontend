@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-events',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent {
+  eventImages: string[]= [];
+  eventNames: string[] = [];
+  spotlight = [];
 
+  ngOnInit(){
+    this.eventImages = ["assets/images/intro/cat.jpg","assets/images/intro/cat.jpg","assets/images/intro/cat.jpg","assets/images/intro/cat.jpg"];
+    this.eventNames = ["Event","Event","Event","Event"];
+  }
 }
