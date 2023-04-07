@@ -1,15 +1,14 @@
-<div class="">
+<div class="" xmlns="http://www.w3.org/1999/html">
   <!--Header-->
-  <div class="pt-8">
+  <div class="py-7 bg-[#809C34]">
     <div class="container m-auto flex justify-between">
-      <div class="font-extrabold text-[40px] font-roboto cursor-pointer" (click)="direct('intro')">
+      <div class="font-extrabold text-[40px] text-white cursor-pointer" (click)="direct('intro')">
         Climate Change
       </div>
-      <div class="gap-8 flex font-medium text-2xl font-reboto">
+      <div class="gap-8 flex font-medium text-2xl text-white">
         <button (click)="direct('effects')">Effects</button>
         <button (click)="direct('causes')">Causes</button>
         <button (click)="direct('solution')">Solution</button>
-        <button (click)="direct('future')">Future</button>
         <button (click)="direct('events')">Events</button>
       </div>
     </div>
@@ -17,53 +16,43 @@
 
 
   <!--Content-->
-  <div class="mt-24 container m-auto px-12">
-    <div class="px-12 ">
-      <!--Main Title-->
-      <div class="font-bold text-7xl text-center font-red-hat-display">
-        What Is Climate Change?
-      </div>
+  <div class="mt-24 container m-auto">
+    <div class="">
 
-      <!--Description-->
-      <div class="mt-24 flex items-center justify-center">
-        <div class="mr-24 text-justify text-[28px] font-roboto ">
-          Climate change refers to a long-term alteration in the average weather patterns that have come to define
-          Earth's
-          local, regional, and global climates.
+      <div class="flex">
+        <div class="mr-24">
+          <div class="font-bold text-7xl">
+            What Is Climate Change?
+          </div>
+          <div class="mt-7 text-justify text-[28px]">
+            Climate change refers to a long-term alteration in the average weather patterns that have come to define
+            Earth's
+            local, regional, and global climates.
+          </div>
         </div>
         <div>
-          <img nz-image width="630px" height="390px" class="max-w-none" [nzSrc]="'assets/images/intro/polaBear.jpg'">
+          <div>
+            <img nz-image width="630px" height="390px" class="max-w-none" [nzSrc]="'assets/images/intro/polaBear.jpg'">
+          </div>
         </div>
       </div>
 
-
-      <!--Overview-->
-      <div class="mt-20">
-        <div class="font-bold text-[55px] font-roboto">
-          Overview
-        </div>
-        <div class="font-roboto text-[28px] mt-12 text-justify">
-          Climate change is a significant global issue that is driven by anthropogenic factors such as human-induced
-          greenhouse gas emissions, deforestation, and land-use changes. The impacts of climate change are felt
-          worldwide, with severe consequences for ecosystems, human societies, and the global economy.
-        </div>
-      </div>
     </div>
 
     <!--Team-->
     <div class="mt-32">
-      <div class="font-bold text-[55px] font-reboto text-center">
-        Meet our team
+      <div class="font-bold text-[55px]">
+        Our Team
       </div>
       <div class="flex gap-8 justify-between mt-16" *ngIf="!loadingUser else loadingTpl ">
         <nz-card class="w-[300px] border-[#F6F6F6] bg-[#F6F6F6]" *ngFor="let user of users">
           <div>
             <img nz-image [nzSrc]="user.image">
           </div>
-          <div class="font-roboto font-medium text-2xl">
+          <div class="text-2xl font-bold">
             {{user.name}}
           </div>
-          <div class="font-robot text-[22px]">
+          <div class="text-[22px]">
             {{user.position}}
           </div>
         </nz-card>
@@ -72,22 +61,97 @@
   </div>
 
   <!--Footer-->
-  <div class="mt-24 container m-auto mt-52 px-12">
-    <!--Icon-->
-    <div class="text-center gap-3 flex justify-center">
-      <a class="cursor-pointer" href="https://www.facebook.com/" target=”_blank”>
-        <span class="text-[36px]" nz-icon nzType="facebook" nzTheme="outline"></span>
-      </a>
-      <a class="cursor-pointer" href="https://www.instagram.com/" target=”_blank”>
-        <span class="text-[36px]" nz-icon nzType="instagram" nzTheme="outline"></span></a>
-      <a class="cursor-pointer" href="https://twitter.com/?lang=en" target=”_blank”>
-        <span class="text-[36px]" nz-icon nzType="twitter" nzTheme="outline"></span></a>
-      <a class="cursor-pointer" href="https://www.linkedin.com/" target=”_blank”>
-        <span class="text-[36px]" nz-icon nzType="linkedin" nzTheme="outline"></span></a>
-    </div>
-    <!--Copy write-->
-    <div class="font-medium font-roboto text-base mt-[42px] pb-14 ">
-      © 2023 Climate change. All rights reserved
+  <div class="py-10 bg-[#24352C] mt-32">
+    <div class="container m-auto">
+
+      <div class="text-center text-white font-bold text-5xl">
+        Contact Us
+      </div>
+
+      <div class="my-20">
+        <form nz-form [formGroup]="validateForm">
+          <!--Email-->
+          <div>
+            <nz-form-item class="">
+              <nz-form-control nzErrorTip="Please input your email!">
+                <nz-input-group>
+                  <input class="text-xl text-white bg-[#24352C] border-[#809C34] border placeholder-[#809C34]"
+                         formControlName="email" nz-input
+                         placeholder="Email"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <!--Name-->
+          <div>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your name!">
+                <nz-input-group>
+                  <input class="text-xl text-white bg-[#24352C] border-[#809C34] border placeholder-[#809C34]"
+                         formControlName="name" nz-input
+                         placeholder="Name"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <!--Phone Number-->
+          <div>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your name!">
+                <nz-input-group>
+                  <input class="text-xl text-white bg-[#24352C] border-[#809C34] border placeholder-[#809C34]"
+                         formControlName="phone" nz-input
+                         placeholder="Phone"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <!--Message-->
+
+          <div>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your phone number!">
+                <nz-input-group>
+                  <textarea nz-input
+                            class="text-xl text-white bg-[#24352C] border-[#809C34] border placeholder-[#809C34]"
+                            formControlName="message"
+                            placeholder="Message">
+                  </textarea>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+
+          </div>
+          <!--Submit-->
+          <div>
+            <nz-form-item>
+              <nz-form-control>
+                <button nz-button (click)="submitForm()"
+                        class="hover:bg-[#809C34] hover:text-white text-xl f h-auto w-full bg-[#809C34] text-white border-0 py-4">
+                  Send
+                </button>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </form>
+      </div>
+
+      <!--Icon-->
+      <!--      <div class="text-center gap-3 flex justify-center">
+              <a class="cursor-pointer" href="https://www.facebook.com/" target=”_blank”>
+                <span class="text-[36px]" nz-icon nzType="facebook" nzTheme="outline"></span>
+              </a>
+              <a class="cursor-pointer" href="https://www.instagram.com/" target=”_blank”>
+                <span class="text-[36px]" nz-icon nzType="instagram" nzTheme="outline"></span></a>
+              <a class="cursor-pointer" href="https://twitter.com/?lang=en" target=”_blank”>
+                <span class="text-[36px]" nz-icon nzType="twitter" nzTheme="outline"></span></a>
+              <a class="cursor-pointer" href="https://www.linkedin.com/" target=”_blank”>
+                <span class="text-[36px]" nz-icon nzType="linkedin" nzTheme="outline"></span></a>
+            </div>-->
+      <!--Copy write-->
+      <div class="font-medium text-base text-right text-white">
+        © 2023 Climate change. All rights reserved
+      </div>
     </div>
   </div>
 

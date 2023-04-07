@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],
-        'red-hat-display':['Red Hat Display','sans-serif']
+        'red-hat-display':['Red Hat Display','sans-serif'],
+        'helvetica': ['Helvetica','Arial', 'sans-serif']
       },
       colors: {
         'danger': '#F0951C',
