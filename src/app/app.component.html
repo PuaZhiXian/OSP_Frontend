@@ -1,58 +1,112 @@
-<!--<nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
-            nzCollapsible
-            nzWidth="256px"
-            nzBreakpoint="md"
-            [(nzCollapsed)]="isCollapsed"
-            [nzTrigger]="null">
-    <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-        <h1>Ant Design Of Angular</h1>
-      </a>
+<div class="w-full">
+  <div class="py-7 bg-[#809C34]">
+    <div class="container m-auto flex justify-between">
+      <div class="font-extrabold text-[40px] text-white cursor-pointer" (click)="direct('intro')">
+        Climate Change
+      </div>
+      <div class="gap-8 flex font-medium text-2xl text-white">
+        <button (click)="direct('effects')">Effects</button>
+        <button (click)="direct('causes')">Causes</button>
+        <button (click)="direct('solution')">Solution</button>
+        <button (click)="direct('events')">Events</button>
+      </div>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
-          </li>
-        </ul>
-      </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>Basic Form</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nz-sider>
-  <nz-layout>
-    <nz-header>
-      <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <span class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></span>
-        </span>
-      </div>
-    </nz-header>
-    <nz-content>
-      <div class="inner-content">
-        <router-outlet></router-outlet>
-      </div>
-    </nz-content>
-  </nz-layout>
-</nz-layout>-->
+  </div>
+  <div class="w-full font-helvetica">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="py-10 {{showContactUser? 'bg-[#24352C]':'bg-white'}} mt-32">
+    <div class="container m-auto">
 
-<div class="w-full font-helvetica">
-  <router-outlet></router-outlet>
+      <div *ngIf="showContactUser" class="text-center text-white font-bold text-5xl">
+        Contact Us
+      </div>
+      <!--Form-->
+      <div *ngIf="showContactUser" class="my-20">
+        <form nz-form [formGroup]="validateForm">
+          <!--Email-->
+          <div>
+            <nz-form-item class="">
+              <nz-form-control nzErrorTip="Please input your email!">
+                <nz-input-group>
+                  <input class="w-full text-xl text-white bg-[#24352C] border-[#809C34] border placeholder-[#809C34]"
+                         formControlName="email" nz-input
+                         placeholder="Email"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <!--Name-->
+          <div>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your name!">
+                <nz-input-group>
+                  <input class="text-xl text-white bg-[#24352C] border-[#809C34] border placeholder-[#809C34]"
+                         formControlName="name" nz-input
+                         placeholder="Name"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <!--Phone Number-->
+          <div>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your name!">
+                <nz-input-group>
+                  <input class="text-xl text-white bg-[#24352C] border-[#809C34] border placeholder-[#809C34]"
+                         formControlName="phone" nz-input
+                         placeholder="Phone"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <!--Message-->
+
+          <div>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your phone number!">
+                <nz-input-group>
+                  <textarea nz-input
+                            class="text-xl text-white bg-[#24352C] border-[#809C34] border placeholder-[#809C34]"
+                            formControlName="message"
+                            placeholder="Message">
+                  </textarea>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+
+          </div>
+          <!--Submit-->
+          <div>
+            <nz-form-item>
+              <nz-form-control>
+                <button nz-button (click)="submitForm()"
+                        class="hover:bg-[#809C34] hover:text-white text-xl f h-auto w-full bg-[#809C34] text-white border-0 py-4">
+                  Send
+                </button>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </form>
+      </div>
+
+      <!--Icon-->
+      <!--      <div class="text-center gap-3 flex justify-center">
+              <a class="cursor-pointer" href="https://www.facebook.com/" target=”_blank”>
+                <span class="text-[36px]" nz-icon nzType="facebook" nzTheme="outline"></span>
+              </a>
+              <a class="cursor-pointer" href="https://www.instagram.com/" target=”_blank”>
+                <span class="text-[36px]" nz-icon nzType="instagram" nzTheme="outline"></span></a>
+              <a class="cursor-pointer" href="https://twitter.com/?lang=en" target=”_blank”>
+                <span class="text-[36px]" nz-icon nzType="twitter" nzTheme="outline"></span></a>
+              <a class="cursor-pointer" href="https://www.linkedin.com/" target=”_blank”>
+                <span class="text-[36px]" nz-icon nzType="linkedin" nzTheme="outline"></span></a>
+            </div>-->
+      <!--Copy write-->
+      <div class="font-medium text-base text-right {{showContactUser?'text-white':''}}">
+        © 2023 Climate change. All rights reserved
+      </div>
+    </div>
+  </div>
 </div>
+
