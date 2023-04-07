@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss']
 })
-export class EventsComponent {
+export class EventsComponent implements OnInit{
   eventImages: string[]= [];
   eventNames: string[] = [];
   spotlight = [];
