@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {IArticleDetail} from "../../../../interface/article/i-article-detail";
-import {ArticleConstant} from "../../../../constant/article/article-constant";
+import {finalize} from "rxjs";
+import {ArticleRestService} from "../../../../restService/article/article.rest.service";
 
 @Component({
   selector: 'article-detail',
@@ -12,14 +13,28 @@ export class ArticleDetailComponent implements OnInit {
 
   index!: string | null;
   articleDetail !: IArticleDetail;
+  loadingArticleDetail: boolean = true;
 
-  constructor(private actRoute: ActivatedRoute) {
+  constructor(private actRoute: ActivatedRoute,
+              private articleRestService: ArticleRestService) {
   }
 
   ngOnInit(): void {
     this.index = this.actRoute.snapshot.paramMap.get('index');
     if (this.index != null) {
-      this.articleDetail = ArticleConstant.articlesDetails[+this.index];
+      this.initArticleDetail(+this.index);
     }
+  }
+
+  initArticleDetail(index: number) {
+    this.articleRestService.getArticle()
+      .pipe(finalize(() => {
+        this.loadingArticleDetail = false;
+      }))
+      .subscribe((resp) => {
+        this.articleDetail = resp.filter(value => {
+          return value.id == 'A' + index;
+        })[0];
+      })
   }
 }

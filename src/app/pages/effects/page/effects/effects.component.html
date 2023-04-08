@@ -9,7 +9,7 @@
   <div class="mt-20 text-[55px] font-bold text-center">
     World’s Data
   </div>
-  <div class="grid grid-cols-3 gap-11">
+  <div class="grid grid-cols-3 gap-11" *ngIf="!loadingArticle ;else loadingTpl">
     <div
       class="group shadow-xl rounded-2xl h-full m-3 cursor-pointer relative flex items-center justify-center overflow-hidden"
       *ngFor="let articleDetail of articlesDetails; let i = index" (click)="openArticleDetail(i)">
@@ -26,3 +26,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #loadingTpl>
+  <nz-skeleton [nzActive]="true"></nz-skeleton>
+</ng-template>

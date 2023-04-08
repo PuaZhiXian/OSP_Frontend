@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {IArticleCard} from "../../../../interface/article/i-article-card";
 import {IArticleDetail} from "../../../../interface/article/i-article-detail";
-import {ArticleConstant} from "../../../../constant/article/article-constant";
+import {ArticleRestService} from "../../../../restService/article/article.rest.service";
+import {finalize} from "rxjs";
 
 @Component({
   selector: 'app-effects',
@@ -11,6 +12,11 @@ import {ArticleConstant} from "../../../../constant/article/article-constant";
 export class EffectsComponent implements OnInit {
   articles!: IArticleCard[];
   articlesDetails!: IArticleDetail[];
+  loadingArticle: boolean = true;
+
+
+  constructor(private articleRestService: ArticleRestService) {
+  }
 
   ngOnInit(): void {
     this.initArticle();
@@ -38,7 +44,14 @@ export class EffectsComponent implements OnInit {
   }
 
   initArticleDetail() {
-    this.articlesDetails = ArticleConstant.articlesDetails;
+    this.articleRestService.getArticle()
+      .pipe(finalize(() => {
+        this.loadingArticle = false;
+      }))
+      .subscribe((resp) => {
+        this.articlesDetails = resp;
+        console.log(resp)
+      })
   }
 
   openArticleDetail(index: number) {
