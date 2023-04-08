@@ -4,4 +4,25 @@
     Effects
   </div>
   <article-card [isCausePage]="false" [articles]="articles"></article-card>
+
+  <!--World Data-->
+  <div class="mt-20 text-[55px] font-bold text-center">
+    World’s Data
+  </div>
+  <div class="grid grid-cols-3 gap-11">
+    <div
+      class="group shadow-xl rounded-2xl h-full m-3 cursor-pointer relative flex items-center justify-center overflow-hidden"
+      *ngFor="let articleDetail of articlesDetails">
+      <div class="h-full">
+        <img class="h-full transition-all duration-500 ease-in-out transform group-hover:scale-110" nz-image
+             [nzSrc]="'assets/images/effects/'+articleDetail.image"/>
+      </div>
+      <div
+        class="absolute bg-black h-full w-full text-5xl text-white text-center align-middle opacity-0 group-hover:opacity-70">
+        <div class="flex justify-center items-center h-full">
+          {{articleDetail.title}}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
