@@ -14,7 +14,9 @@ import { ArticleCardComponent } from './component/article-card/article-card.comp
     ArticleDetailComponent,
     ArticleCardComponent
   ],
-  exports: []
+  exports: [
+    ArticleCardComponent
+  ]
 })
 export class CausesModule {
 }
