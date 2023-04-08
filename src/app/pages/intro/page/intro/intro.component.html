@@ -16,7 +16,7 @@
         </div>
         <div>
           <div>
-            <img nz-image width="630px" height="390px" class="max-w-none" [nzSrc]="'assets/images/intro/polaBear.jpg'">
+            <img width="630px" height="390px" class="max-w-none" [src]="'assets/images/intro/polaBear.jpg'">
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
       <div class="flex gap-8 justify-between mt-16" *ngIf="!loadingUser else loadingTpl ">
         <nz-card class="w-[300px] border-[#F6F6F6] bg-[#F6F6F6]" *ngFor="let user of users">
           <div>
-            <img nz-image [nzSrc]="user.image">
+            <img [src]="user.image">
           </div>
           <div class="text-2xl font-bold">
             {{user.name}}
