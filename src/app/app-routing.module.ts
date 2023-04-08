@@ -8,7 +8,8 @@ const routes: Routes = [
   {path: 'causes', loadChildren: () => import('./pages/causes/causes.module').then(m => m.CausesModule)},
   {path: 'solution', loadChildren: () => import('./pages/solutions/solutions.module').then(m => m.SolutionsModule)},
   {path: 'future', loadChildren: () => import('./pages/future/future.module').then(m => m.FutureModule)},
-  {path: 'events', loadChildren: () => import('./pages/events/events.module').then(m => m.EventsModule)}
+  {path: 'events', loadChildren: () => import('./pages/events/events.module').then(m => m.EventsModule)},
+  {path: 'article', loadChildren: () => import('./pages/article/article.module').then(m => m.ArticleModule)}
 ];
 
 @NgModule({

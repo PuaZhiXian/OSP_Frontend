@@ -12,7 +12,7 @@
   <div class="grid grid-cols-3 gap-11">
     <div
       class="group shadow-xl rounded-2xl h-full m-3 cursor-pointer relative flex items-center justify-center overflow-hidden"
-      *ngFor="let articleDetail of articlesDetails">
+      *ngFor="let articleDetail of articlesDetails; let i = index" (click)="openArticleDetail(i)">
       <div class="h-full">
         <img class="h-full transition-all duration-500 ease-in-out transform group-hover:scale-110" nz-image
              [nzSrc]="'assets/images/effects/'+articleDetail.image"/>
