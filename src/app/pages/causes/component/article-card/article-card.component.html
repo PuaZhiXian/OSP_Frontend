@@ -1,0 +1,12 @@
+<div *ngFor="let article of articles;  let i = index" class="grid grid-cols-2 bg-[#F6F6F6] content-center">
+  <div *ngIf="i%2!=0">
+    <img nz-image [nzSrc]="article.image">
+  </div>
+  <div class="pt-7 px-7 ">
+    <div class="text-[40px] font-bold">{{article.title}}</div>
+    <div class="text-[28px] text-justify	">{{article.description}}</div>
+  </div>
+  <div *ngIf="i%2==0">
+    <img nz-image [nzSrc]="path + article.image">
+  </div>
+</div>
