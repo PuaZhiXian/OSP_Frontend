@@ -1,10 +1,35 @@
-<div>
-  <div>{{articleDetail.title}}</div>
-  <div class="grid grid-cols-3">
-    <div class="col-span-2">
-    </div>
-    <div class="col-span-1">
+<div class="mt-24 container m-auto pb-60">
+  <div class="font-bold text-6xl">{{articleDetail.title}}</div>
 
+  <div class="grid grid-cols-3 gap-4 my-10">
+    <!--Image-->
+    <!--TODO:resize the images px-->
+    <div class="col-span-2 border border-gray-900 ">
+      <img nz-image class="h-full w-full" [nzSrc]="'assets/images/effects/'+ articleDetail.image"/>
     </div>
+    <!--Project information-->
+    <div class="col-span-1 p-5 bg-[#F6F6F6]">
+      <div class="font-bold text-3xl mb-10">Project Information</div>
+      <div class="text-lg">
+        <span class="font-bold">Data source: </span>
+        <span>{{articleDetail.dataSource}}</span>
+      </div>
+      <div class="text-lg">
+        <span class="font-bold">Category: </span>
+        <span>{{articleDetail.category}}</span>
+      </div>
+      <div class="text-lg">
+        <span class="font-bold">URL: </span>
+        <a href="https://climate.nasa.gov/vital-signs/sea-level/">{{articleDetail.url}}</a>
+      </div>
+      <div class="text-lg">
+        <span class="font-bold">Date: </span>
+        <span>{{articleDetail.date | date : 'MMM YYYY'}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-[28px] ">
+    {{articleDetail.description}}
   </div>
 </div>
