@@ -8,15 +8,9 @@ import {IArticleCard} from "../../../../interface/article/i-article-card";
 })
 export class ArticleCardComponent implements OnInit {
   @Input() articles!: IArticleCard[];
-  @Input() isCausePage!: boolean;
-  path!: string;
+  @Input() path!: string;
 
   ngOnInit(): void {
-    if (this.isCausePage) {
-      this.path = "assets/images/cause/";
-    } else {
-      this.path = "assets/images/effects/"
-    }
   }
 
 }

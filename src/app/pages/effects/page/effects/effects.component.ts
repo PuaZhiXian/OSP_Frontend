@@ -3,6 +3,7 @@ import {IArticleCard} from "../../../../interface/article/i-article-card";
 import {IArticleDetail} from "../../../../interface/article/i-article-detail";
 import {ArticleRestService} from "../../../../restService/article/article.rest.service";
 import {finalize} from "rxjs";
+import {ArticleConstant} from "../../../../constant/article/article-constant";
 
 @Component({
   selector: 'app-effects',
@@ -19,28 +20,8 @@ export class EffectsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initArticle();
+    this.articles = ArticleConstant.effectArticleCard;
     this.initArticleDetail();
-  }
-
-  initArticle() {
-    this.articles = [
-      {
-        image: 'Sea level rise.webp',
-        title: 'Rising Sea Levels',
-        description: "As temperatures rise, glaciers and ice sheets melt, causing sea levels to rise. This can lead to flooding of coastal cities, erosion of shorelines, and destruction of coastal habitats such as wetlands and coral reefs.",
-      },
-      {
-        image: 'hurricane.webp',
-        title: 'Extreme weather',
-        description: "Climate change is causing an increase in the frequency and severity of extreme weather events such as heatwaves, hurricanes, droughts, and floods. These events can result in property damage, loss of life, and displacement of communities.",
-      },
-      {
-        image: 'Biodiversity loss.jpeg',
-        title: 'Biodiversity loss',
-        description: "Climate change is causing changes in ecosystems that are putting many species of plants and animals at risk of extinction. This loss of biodiversity can lead to imbalances in ecosystems and negatively impact human food and water supplies.",
-      }
-    ]
   }
 
   initArticleDetail() {
