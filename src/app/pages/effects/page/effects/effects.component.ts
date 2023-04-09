@@ -36,7 +36,7 @@ export class EffectsComponent implements OnInit {
   }
 
   openArticleDetail(index: number) {
-    window.open('http://localhost:4200/article/' + index, "_blank");
+    window.open('http://localhost:4200/events/' + index, "_blank");
   }
 
 

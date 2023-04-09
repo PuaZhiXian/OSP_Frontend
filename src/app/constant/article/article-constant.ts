@@ -63,5 +63,28 @@ export class ArticleConstant {
     },
   ];
 
+  public static readonly eventArticleCard = [
+    {
+      image: 'earth-day.jpeg',
+      title: 'Earth Day',
+      description: "Earth Day is an annual event celebrated on April 22nd to raise awareness and support for environmental protection. It was first observed in 1970 and has since become a global movement with over 190 countries participating. Earth Day aims to promote sustainable practices and address pressing environmental issues, such as climate change, pollution, and deforestation. The day is marked with various activities, including tree planting, community clean-ups, and educational events. It serves as a reminder that we all have a responsibility to protect our planet for future generations.",
+    },
+    {
+      image: 'global-climate-strike.jpeg',
+      title: 'Global Climate Strike',
+      description: "The Global Climate Strike is a campaign that aims to draw attention to the urgent need to take action on climate change. It involves students, activists, and concerned citizens from all over the world, who come together to demand immediate and effective action to address the climate crisis. The campaign is focused on encouraging governments and businesses to prioritize the reduction of greenhouse gas emissions, and to take steps to transition to renewable energy sources. The Global Climate Strike has gained significant momentum in recent years, with millions of people participating in strikes and protests in cities around the world. It is seen as a powerful tool for raising awareness of the urgency of the climate crisis and mobilizing public support for action.",
+    },
+    {
+      image: 'say-no-plastic.jpg',
+      title: 'Plastic-Free July',
+      description: "Plastic-Free July is a global campaign that encourages people to reduce their plastic consumption and waste during the month of July. Participants are encouraged to take actions to reduce plastic use, such as bringing their own reusable bags and water bottles. The campaign also promotes policy changes and corporate responsibility to reduce plastic pollution. Plastic-Free July provides resources, tools, and tips to help individuals and organizations reduce their plastic use, and encourages participants to share their experiences and successes on social media using the hashtag #PlasticFreeJuly.",
+    },
+    {
+      image: 'race-to-zero.png',
+      title: 'Race to Zero',
+      description: "Race to Zero is a global campaign that brings together businesses, cities, regions, investors, and other organizations committed to achieving net-zero carbon emissions by 2050 at the latest. The campaign aims to mobilize leadership and support for a healthy, resilient, zero-carbon recovery that prevents future threats, creates decent jobs, and unlocks inclusive, sustainable growth. The Race to Zero campaign focuses on a range of sectors and solutions that are essential for achieving a zero-carbon future, such as renewable energy, clean transportation, sustainable buildings, and regenerative agriculture. The campaign also provides a platform for sharing best practices, innovative approaches, and collaborative initiatives among its participants.",
+    },
+  ];
+
 
 }

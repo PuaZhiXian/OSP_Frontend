@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {IArticleCard} from "../../../../interface/article/i-article-card";
+import {ArticleConstant} from "../../../../constant/article/article-constant";
 
 @Component({
   selector: 'app-events',
@@ -6,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit{
-  eventImages: string[]= [];
-  eventNames: string[] = [];
-  spotlight = [];
+  events! : IArticleCard[];
 
   ngOnInit(){
-    this.eventImages = ["assets/images/intro/cat.jpg","assets/images/intro/cat.jpg","assets/images/intro/cat.jpg","assets/images/intro/cat.jpg"];
-    this.eventNames = ["Event","Event","Event","Event"];
+    this.events = ArticleConstant.eventArticleCard;
+  }
+
+  openEventDetail(event: IArticleCard){
+    window.open('http://localhost:4200/future', "_blank");
+  }
+
+  openSpotlight(link: string){
+    window.open(link, "_blank")
   }
 }

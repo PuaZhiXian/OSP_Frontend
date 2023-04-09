@@ -1,59 +1,86 @@
-<div class="">
-  <!--Header-->
+<!--Content-->
+<div class="mt-24 container m-auto px-12">
+  <div class="px 12">
+    <!--Main Title-->
+    <div class="text-6xl font-bold mb-16">
+      Climate Action
+    </div>
 
-  <!--Content-->
-  <div class="mt-24 container m-auto px-12">
-    <div class="px 12">
-      <!--Main Title-->
-      <div class="font-bold text-7xl text-center font-red-hat-display">
-        What Is Climate Change?
-      </div>
-
-      <!--Event List-->
-      <div class="eventList">
-        <nz-avatar-group class="eventImages" *ngFor="let image of eventImages">
-          <div class="eventImage">
-            <nz-avatar [nzShape]="'circle'" [nzSize]="64" [nzSrc]="image"></nz-avatar>
+    <!--Event List-->
+    <div class="grid grid-cols-4 flex-auto justify-center" >
+      <nz-avatar-group class="justify-center mb-16" *ngFor="let event of events">
+        <div class="eventImage">
+          <nz-avatar class="hover:contrast-125" [nzShape]="'circle'" [nzSize]="260" [nzSrc]="'assets/images/events/'+event.image"
+          (click)="openEventDetail(event)"
+          ></nz-avatar>
+          <div class="font-bold text-2xl mt-6 text-center">
+            {{event.title}}s
           </div>
-        </nz-avatar-group>
-        <div class="font-roboto font-medium text-2xl" *ngFor="let name of eventNames">
-          {{name}}
         </div>
-      </div>
+      </nz-avatar-group>
+    </div>
 
-      <!--Spotlight-->
-      <div class="spotlight">
-        <div class="font-bold text-7xl text-center font-red-hat-display">
-          In The Spotlight
-        </div>
-        <div class="slLayout">
-          <div class="slBoxLeft">
-            <div class="slBox">
-              <div class="slImage"></div>
-              <div class="slText"></div>
+    <!--Spotlight-->
+    <div class="spotlight">
+      <div class="text-6xl font-bold mb-8">
+        In The Spotlight
+      </div>
+      <div class="grid grid-cols-2 justify-center">
+        <div class="justify-center ">
+          <div class="bg-slate-100 h-784 w-656">
+            <div class="p-3">
+              <img class="object-cover hover:contrast-125"
+                nz-image
+                [nzSrc]="'assets/images/events/climate-change-video.png'"
+                   [nzDisablePreview]="true"
+                   (click)="openSpotlight('https://youtu.be/dcBXmj1nMTQ')"
+              />
+            </div>
+            <div class="font-bold text-xl text-center pb-3">
+              <h6>What is Climate Change? | Start Here</h6>
             </div>
           </div>
-          <div class="slBoxRight">
-            <div class="slBoxSmall">
-              <div class="slBox">
-                <div class="slImage"></div>
-                <div class="slText"></div>
+        </div>
+        <div class="slBoxRight">
+          <div class="slBoxSmall">
+            <div class="bg-slate-100">
+              <div>
+                <a href="https://youtu.be/dcBXmj1nMTQ" target="_blank">
+                  <img class="object-fill h-500 w-700 p-3 hover:contrast-125"
+                       nz-image
+                       width="330px"
+                       height="314px"
+                       [nzSrc]="'assets/images/events/hurricane-news.webp'"
+                       [nzDisablePreview]="true"
+                       (click)="openSpotlight('https://www.newscientist.com/article/2368302-climate-change-may-drive-more-hurricanes-towards-the-us-east-coast/')"
+                  />
+
+                </a>
+              </div>
+              <div class="font-bold text-xl text-center">
+                <h6>Climate change may drive more hurricanes towards the US east coast</h6>
               </div>
             </div>
-            <div class="slBoxSmall">
-              <div class="slBox">
-                <div class="slImage"></div>
-                <div class="slText"></div>
+          </div>
+          <div class="slBoxSmall">
+            <div class="bg-slate-100">
+              <div>
+                <img class="p-3 object-fill hover:contrast-125"
+                     nz-image
+                     width="330px"
+                     height="314px"
+                     [nzSrc]="'assets/images/events/GOP-news.png'"
+                     [nzDisablePreview]="true"
+                     (click)="openSpotlight('https://www.foxnews.com/politics/house-lawmakers-un-report-climate-change')"
+                 />
+              </div>
+              <div class="font-bold text-xl text-center">
+                <h6>GOP urged to denounce ‘alarmist’ UN climate change report</h6>
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
-  </div>
-
-  <!--Footer-->
-
+   </div>
 </div>
