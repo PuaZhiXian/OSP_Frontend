@@ -10,7 +10,7 @@
     <div class="grid grid-cols-4 flex-auto justify-center" >
       <nz-avatar-group class="justify-center mb-16" *ngFor="let event of events; let i = index">
         <div class="eventImage">
-          <nz-avatar class="hover:contrast-125" [nzShape]="'circle'" [nzSize]="260" [nzSrc]="'assets/images/events/'+event.image"
+          <nz-avatar class="cursor-pointer hover:contrast-125" [nzShape]="'circle'" [nzSize]="260" [nzSrc]="'assets/images/events/'+event.image"
           (click)="openEventDetail(i)"
           ></nz-avatar>
           <div class="font-bold text-2xl mt-6 text-center">
@@ -29,7 +29,7 @@
         <div class="justify-center h-auto">
           <div class="bg-slate-100">
             <div class="p-3">
-              <img class="object-none p-3 h-[1002px] w-full hover:contrast-125"
+              <img class="object-none p-3 h-[1002px] w-full cursor-pointer hover:contrast-125"
                 nz-image
                 [nzSrc]="'assets/images/events/climate-change-video.png'"
                    [nzDisablePreview]="true"
@@ -45,7 +45,7 @@
           <div class="slBoxSmall">
             <div class="bg-slate-100 flex-auto">
               <a href="https://youtu.be/dcBXmj1nMTQ" target="_blank" class="w-full h-full">
-                <img class="object-fill h-500 w-700 p-5 pl-2 hover:contrast-125"
+                <img class="object-fill h-500 w-700 p-5 pl-2 cursor-pointer hover:contrast-125"
                      nz-image
                      [nzSrc]="'assets/images/events/hurricane-news.webp'"
                      [nzDisablePreview]="true"
@@ -60,7 +60,7 @@
           <div class="slBoxSmall">
             <div class="bg-slate-100 flex-auto">
               <div>
-                <img class="p-3 object-fill p-5 pl-2 hover:contrast-125"
+                <img class="p-3 object-fill p-5 pl-2 cursor-pointer hover:contrast-125"
                      nz-image
                      [nzSrc]="'assets/images/events/GOP-news.png'"
                      [nzDisablePreview]="true"
