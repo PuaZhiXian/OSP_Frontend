@@ -1,15 +1,15 @@
 <div class="mt-24 container m-auto">
   <!--Title-->
-  <div class="text-[45px] mb-4">
+  <div class="text-6xl font-bold mb-16">
     {{eventTitle}}
   </div>
   <!--Image-->
   <div>
-    <img class="object-fill h-466 w-843"
-         nz-image [nzSrc]="'assets/images/events/'+eventImage"/>
+    <img class="object-fill h-full w-full"
+         nz-image [nzDisablePreview]="true" [nzSrc]="'assets/images/events/'+eventImage"/>
   </div>
   <!--Description-->
-  <div class="text-[28px] font-sans text-base justify-normal ">
+  <div class="font-sans font-normal leading-relaxed text-justify text-3xl mt-7 h-full w-full">
     {{eventDescription}}
   </div>
 </div>

@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {FutureComponent} from "./page/future/future.component";
 
 const routes: Routes = [
-  {path: '', component: FutureComponent},
+  {path: ':index', component: FutureComponent},
 ];
 
 @NgModule({

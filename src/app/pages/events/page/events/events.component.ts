@@ -14,8 +14,8 @@ export class EventsComponent implements OnInit{
     this.events = ArticleConstant.eventArticleCard;
   }
 
-  openEventDetail(event: IArticleCard){
-    window.open('http://localhost:4200/future', "_blank");
+  openEventDetail(index: number){
+    window.open("http://localhost:4200/future/"+index, "_blank");
   }
 
   openSpotlight(link: string){
