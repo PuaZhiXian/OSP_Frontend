@@ -25,11 +25,11 @@
       <div class="text-6xl font-bold mb-8">
         In The Spotlight
       </div>
-      <div class="grid grid-cols-2 justify-center">
-        <div class="justify-center h-auto">
-          <div class="bg-slate-100 pb-3">
+      <div class="grid grid-cols-2 justify-center bg-slate-100">
+        <div class="h-auto">
+          <div class="pb-3">
             <div class="p-3 grow">
-              <img class="object-none p-3 h-[1002px] w-full cursor-pointer hover:contrast-125"
+              <img class="object-none p-3 pb-0 h-[1035px] w-full cursor-pointer hover:contrast-125"
                 nz-image
                 [nzSrc]="'assets/images/events/climate-change-video.png'"
                    [nzDisablePreview]="true"
@@ -42,32 +42,32 @@
           </div>
         </div>
         <div class="justify-center">
-          <div class="slBoxSmall">
-            <div class="bg-slate-100 flex-auto">
+          <div class="justify-items-center">
+            <div class="bg-slate-100 flex-auto p-3">
               <a href="https://youtu.be/dcBXmj1nMTQ" target="_blank" class="w-full h-full">
-                <img class="object-fill p-5 pl-2 cursor-pointer hover:contrast-125"
+                <img class="object-fill p-3 pl-2 cursor-pointer hover:contrast-125"
                      nz-image
                      [nzSrc]="'assets/images/events/hurricane-news.webp'"
                      [nzDisablePreview]="true"
                      (click)="openSpotlight('https://www.newscientist.com/article/2368302-climate-change-may-drive-more-hurricanes-towards-the-us-east-coast/')"
                 />
               </a>
-              <div class="font-bold text-2xl text-center pb-3">
+              <div class="font-bold text-2xl text-center">
                 <h4>Climate change may drive more hurricanes towards the US east coast</h4>
               </div>
             </div>
           </div>
           <div class="slBoxSmall">
-            <div class="bg-slate-100 pb-3 flex-auto">
+            <div class="p-3 flex-auto">
               <div>
-                <img class="p-3 object-fill p-5 pl-2 cursor-pointer hover:contrast-125 grow"
+                <img class="p-3 pl-2 cursor-pointer hover:contrast-125 grow"
                      nz-image
                      [nzSrc]="'assets/images/events/GOP-news.png'"
                      [nzDisablePreview]="true"
                      (click)="openSpotlight('https://www.foxnews.com/politics/house-lawmakers-un-report-climate-change')"
                  />
               </div>
-              <div class="font-bold text-2xl text-center pt-3">
+              <div class="font-bold text-2xl text-center">
                 <h4>GOP urged to denounce ‘alarmist’ UN climate change report</h4>
               </div>
             </div>
