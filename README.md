@@ -1,3 +1,7 @@
+# About
+Open Source Programming: Applications And Technology 2022/2023\
+Use angular to create website about environment pollution
+
 # OSPFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
